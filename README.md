@@ -1,8 +1,8 @@
-**Project Title: Vite-React Library Management System**
+**Project Title: VidyaBytes** 
 
 **Description:**
 
-The Vite-React Library Management System is a comprehensive solution for efficiently managing libraries, providing a seamless experience for both librarians and patrons. Built using Vite and React.js for the frontend, and powered by Node.js and MongoDB for the backend, this project aims to streamline library operations, including cataloging, member subscriptions, and seating arrangements.
+The VidyaBytes is a comprehensive solution for efficiently managing libraries, providing a seamless experience for both librarians and patrons. Built using Vite and React.js for the frontend, and powered by Node.js and MongoDB for the backend, this project aims to streamline library operations, including cataloging, member subscriptions, and seating arrangements.
 
 **Key Features:**
 
