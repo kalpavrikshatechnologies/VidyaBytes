@@ -1,10 +1,10 @@
-**Project Title: VidyaBytes** 
+# Project Title: VidyaBytes
 
-**Description:**
+## Description:
 
-The VidyaBytes is a comprehensive solution for efficiently managing libraries, providing a seamless experience for both librarians and patrons. Built using Vite and React.js for the frontend, and powered by Node.js and MongoDB for the backend, this project aims to streamline library operations, including cataloging, member subscriptions, and seating arrangements.
+Vidya Bytes is a comprehensive solution for efficiently managing libraries, offering a seamless experience for both librarians and patrons. Built with Vite and React.js for the frontend and powered by Node.js and MongoDB for the backend, this project aims to streamline library operations, including cataloging, member subscriptions, and seating arrangements.
 
-**Key Features:**
+## Key Features:
 
 1. **Library Catalog Management:**
    - Easily catalog and organize books, multimedia, and other resources.
@@ -32,7 +32,7 @@ The VidyaBytes is a comprehensive solution for efficiently managing libraries, p
 7. **Admin Dashboard:**
    - Powerful admin dashboard for librarians to manage subscriptions, analyze usage data, and track library activities.
 
-**Tech Stack:**
+## Tech Stack:
 
 - Frontend: React.js, Vite
 - Backend: Node.js
@@ -41,28 +41,28 @@ The VidyaBytes is a comprehensive solution for efficiently managing libraries, p
 - Payment Integration: (Choose suitable payment gateway)
 - UI Framework: (Choose UI framework, e.g., Ant Design, Material-UI)
 
-**Installation:**
+## Installation:
 
-# 1. Clone the repository
+### 1. Clone the repository
    ```
-   git clone https://github.com/your-username/vite-react-library-management.git
+   git clone https://github.com/kalpavrikshatechnologies/VidyaBytes
    ```
 
-# 2. Install dependencies
+### 2. Install dependencies
    ```
-   cd vite-react-library-management
+   cd VidyaBytes
    npm install
    ```
 
-# 3. Run the application
+### 3. Run the application
    ```
    npm run dev
    ```
 
-**Contributing:**
+## Contributing:
 Contributions are welcome! Feel free to fork the repository and submit pull requests to enhance features or fix bugs.
 
-**License:**
+## License:
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 Feel free to customize the project according to your specific needs and requirements.
