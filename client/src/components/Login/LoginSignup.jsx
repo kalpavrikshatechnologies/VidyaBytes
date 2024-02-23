@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import "./LoginSignup.css";
 
-import user_icon from "./Assets/person.png";
-import email_icon from "./Assets/email.png";
-import pass_icon from "./Assets/password.png";
-import m_icon from "./Assets/mobile.png";
+import user_icon from "../assets/person.png";
+import email_icon from "../assets/email.png";
+import pass_icon from "../assets/password.png";
+import m_icon from "../assets/mobile.png";
 
 function LoginSignup() {
   const [action, setAction] = useState("Sign Up");
@@ -40,10 +40,14 @@ function LoginSignup() {
           <input type="password" placeholder="Enter a Password" />
         </div>
       </div>
-        {action === "Sign Up" ? <div></div> :   <div className="forgot-password">
-        Lost Password <span>Click Here</span>
-      </div>}
-    
+      {action === "Sign Up" ? (
+        <div></div>
+      ) : (
+        <div className="forgot-password">
+          Lost Password <span>Click Here</span>
+        </div>
+      )}
+
       <div className="submit-container">
         <div
           className={action === "Sign Up" ? "submit grey" : "submit"}
