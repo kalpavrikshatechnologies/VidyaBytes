@@ -1,7 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Routes, Route, Navigate} from "react-router-dom";
 import AdminHome from './components/AdminPage/AdminHome';
-import LoginSignup from './components/Login/LoginSignup';
+import Login from './components/registration/Login';
 import Home from './components/Home/Home';
 
 function App() {
@@ -10,7 +10,7 @@ function App() {
         <Routes>
            <Route path="/" element={<Home />} />
            <Route path='/admin' element={<AdminHome />} />
-           <Route path='/login' element={<LoginSignup />} />
+           <Route path='/login' element={<Login />} />
            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
        </BrowserRouter>
