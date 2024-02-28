@@ -21,7 +21,7 @@ export default function Home() {
             <p className="text-xl lg:text-2xl mb-8">
               Discover your next adventure
             </p>
-            <Link to="/login">
+            <Link to="/register">
               <button className="bg-purple-600 font-medium rounded-full px-8 py-3">
                 Get Started
               </button>

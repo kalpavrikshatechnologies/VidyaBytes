@@ -27,3 +27,5 @@ server/*.local
 *.njsproj
 *.sln
 *.sw?
+
+server/.env
