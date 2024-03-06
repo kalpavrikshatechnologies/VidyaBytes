@@ -7,10 +7,10 @@ import TableCom from '../TableCom.jsx';
 import Drawer from '../Drawer.jsx';
 
 function ClientHome() {
-    const [sideNav,setSideNav] = useState(true)
+    const [sideNav,setSideNav] = useState(false)
 
     return (
-        <div className='w-full '>
+        <div className='w-full h-screen'>
             <ClientNav setSideNav={setSideNav} sideNav ={sideNav}/>
 
 
@@ -22,7 +22,7 @@ function ClientHome() {
         <TableCom/>
 
         <div className='absolute top-0 bottom-0 right-0 h-full'>
-        <Drawer sideNav ={sideNav} setSideNav ={setSideNav} className="bg-red-500"/>
+        <Drawer sideNav ={sideNav} setSideNav ={setSideNav} />
         </div>
        
 
