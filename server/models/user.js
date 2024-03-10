@@ -1,21 +1,24 @@
 const mongoose= require('mongoose')
-const jwt= require('jsonwebtoken')
-const joi= require('joi');
-const passwordComplexity=require('joi-password-complexity');
+// const jwt= require('jsonwebtoken')
+// const joi= require('joi');
+// const passwordComplexity=require('joi-password-complexity');
+const bcrypt = require("bcryptjs");
 
 const userSchema= new mongoose.Schema({
     name:
     {
         type : String ,
         required : true,
+        trim:true
     },
-    phone:
+    email:
     {
         type : String ,
         required : true,
+        unique:true,
     },
 
-    email:
+    phone:
     {
         type : String ,
         required : true,
@@ -28,23 +31,36 @@ const userSchema= new mongoose.Schema({
     },
 });
 
-userSchema.methods.generateAuthToken= function(){
-    const token = jwt.sign({_id: this._id},process.env.JWTPRIVATEKEY,{expiresIn:"7d"});
-    return token
-};
 
-const  User =mongoose.model("user", userSchema);
+// userSchema.pre("save", async function (next) {
 
-
-const validate= (data)=>{
-    const schema = joi.object({
-        name: joi.string().required().label("Full Name"),
-        phone: joi.string().required().label("Phone Number"),
-        email: joi.string().required().label("Email"),
-        password: passwordComplexity().required().label("Password"),
+//     if (this.isModified("password")) {
+//         this.password = await bcrypt.hash(this.password, 10);
         
-    });
-    return schema.validate(data)
-};
+//     }
+//     next()
+// });
 
-module.exports={User,validate};
+const  user =mongoose.model("registrations", userSchema);
+
+
+// userSchema.methods.generateAuthToken= function(){
+//     const token = jwt.sign({_id: this._id},process.env.JWTPRIVATEKEY,{expiresIn:"7d"});
+//     return token
+// };
+
+// const  User =mongoose.model("user", userSchema);
+
+
+// const validate= (data)=>{
+//     const schema = joi.object({
+//         name: joi.string().required().label("Full Name"),
+//         phone: joi.string().required().label("Phone Number"),
+//         email: joi.string().required().label("Email"),
+//         password: passwordComplexity().required().label("Password"),
+        
+//     });
+//     return schema.validate(data)
+// };
+
+module.exports= user;

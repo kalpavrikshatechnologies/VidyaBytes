@@ -17,9 +17,6 @@ function App() {
            <Route path='/signup' element={<Signup />} />
            <Route path='/client' element={<ClientHome />} />
            <Route path='/addbook' element={<AddBook />} />
-
-
-
            <Route path="*" element={<Navigate to="/" />} />
         </Routes>
        </BrowserRouter>
