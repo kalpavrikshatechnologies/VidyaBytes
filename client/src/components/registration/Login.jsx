@@ -11,21 +11,40 @@ function Login() {
     const [password, setPassword] = useState('')
     const navigate = useNavigate()
 
-    const handleSubmit = async(e) => {
+    const handleSubmit = async (e) => {
 
         e.preventDefault();
-        await axios.post('http://localhost:8080/login', { email, password })
-            .then((response) => {
-                console.log('message', response.data.status)
-                if (response.data.status === 200) {
-                    alert("Login Successfull")
-                    navigate('/addbook')
-                } else {
-                    alert("invalid details")
-                }
+        if (!email || !password) {
+            alert("All field are necessary")
+        } else if (!email.includes("@")) {
+            alert("email is incorrect")
+        } else {
 
-            })
-            .catch((err) => console.log(err))
+            const data = await fetch("http://localhost:9000/login", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                body: JSON.stringify({
+                    email, password
+                })
+            });
+
+            const res = await data.json();
+            
+            
+            if (res.status === 200) {
+                alert("Login Successfull")
+                navigate("/home")
+            }else if(res.status === 422){
+                alert('invalid username or password')
+            }else{
+                alert('user not exist')
+
+            }
+
+
+        }
     }
 
     return (
@@ -47,7 +66,7 @@ function Login() {
                     </div>
                     <div class="flex items-start mb-5">
 
-                        <label class="ms-2 text-sm font-medium text-blue-700 cursor-pointer ">Forgot Password ?</label>
+                        <label class="ms-2 text-sm font-medium text-blue-700 cursor-pointer " onClick={()=>navigate('/forgotpass')}>Forgot Password ?</label>
                     </div>
                     <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full  px-5 py-2.5 text-center mb-8" onClick={handleSubmit}>Submit</button>
                 </form>
