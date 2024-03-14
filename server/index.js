@@ -4,6 +4,7 @@ const app = express();
 const cors = require("cors");
 const connection= require('./db/db')
 const router = require('./routes/users')
+const bookRouter= require('./routes/books')
 
 
 // database connection
@@ -15,6 +16,7 @@ app.use(cors());
 
 // routes
 app.use(router)
+app.use('/api/books',bookRouter);
 
 const port = 9000;
 app.listen(port, console.log(`Listening on port ${port}...`));
